@@ -65,7 +65,7 @@ require('php/RolManager.php');
             <!--Titulo-->
                 <div id="TituloArea" class="row py-2" style="background-color:  #e0ddddfd; border: 1px solid #313A3F;border-radius: 1px;">
                     <div class="col-5 mx-auto" style="text-align:center;">
-                        <select class="form-control" id="Titulo">
+                        <select class="form-control etiquetascampos" id="Titulo">
                             <option selected value="ZOTGM">Zona de Operación de Transmision Guerrero Morelos</option>
                             <option value="ZTG">Zona Transmision Guerrero </option>
                         </select>
@@ -112,7 +112,7 @@ require('php/RolManager.php');
                         <div id="DatosArea" title = "" style="border: 1px solid #313A3F;border-radius: 1px;" class="pt-1 col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 order-1 order-sm-1 order-md-1 order-lg-1 order-xl-1">
                             <div class="row">
                                 <div class=" mx-1 p-0 textoremarcado" style="width:10%;height:30px;">Fecha:</div>
-                                <div class=" mx-0 px-0" style="width:44%;height:30px;"><input type="text"  name="FName" id="Fname" value="<?php echo $Fecha;?>" style="width:100%;height:30px; margin:0px;padding:0px;" maxlength=55></div>
+                                <div class=" mx-0 px-0" style="width:150px;height:30px;"><input type="text"  name="FName" id="Fname" value="<?php echo $Fecha;?>" style="width:100%;height:30px; margin:0px;padding:0px;" maxlength=55></div>
                                 <div class=" mx-1 p-0 textoremarcado" style="width:4%;height:30px;">De</div>
                                 <div class=" mx-0 px-0 p-0"   style="width:14%;"><input type="text"  name="HComienzo" id="HC" value="<?php echo $HC;?>" readonly="readonly" style="width:100%;height:30px; text-align: center; "></div>
                                 <div class=" mx-1 p-0 textoremarcado" style="width:2%;height:30px;">a</div>
@@ -135,40 +135,40 @@ require('php/RolManager.php');
                             <div class="row" id="Checks" title = "">
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
                                     <div class="row" id="auditoria">
-                                        <div style="border: 1px solid #313A3F;border-left: 0px solid #313A3F;border-top: 0px solid #313A3F;border-radius: 1px;" class="pt-2 pb-2 col text-center">Auditoria</div>
+                                        <div style="border: 1px solid #313A3F;border-left: 0px solid #313A3F;border-top: 0px solid #313A3F;border-radius: 1px;" class="pt-2 pb-2 col text-center textoremarcado">Auditoria</div>
                                         <div class="w-100"></div>
-                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col"><label><input id="audiApe" type="checkbox" value="Apertura"> Apertura</label></div>
+                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col textoremarcado"><label><input id="audiApe" type="checkbox" value="Apertura"> Apertura</label></div>
                                         <div class="w-100"></div>
-                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col"><label><input id="audiCie" type="checkbox" value="Cierre"> Cierre</label></div>
+                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col textoremarcado"><label><input id="audiCie" type="checkbox" value="Cierre"> Cierre</label></div>
                                     </div>
                                 </div>
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-5 col-xl-5">
                                     <div class="row" id="difusion">
-                                        <div style="border: 1px solid #313A3F;border-left: 0px solid #313A3F;border-top: 0px solid #313A3F;border-radius: 1px;" class="pt-2 pb-2 col text-center">Difusion</div>
+                                        <div style="border: 1px solid #313A3F;border-left: 0px solid #313A3F;border-top: 0px solid #313A3F;border-radius: 1px;" class="pt-2 pb-2 col text-center textoremarcado">Difusion</div>
                                         <div class="w-100"></div>
-                                        <div class="pt-2 col"><label><input id="difuCal" type="checkbox" value="Calidad"> Calidad</label></div>
-                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col"><label><input id="difuSeg" type="checkbox" value="Seguridad"> Seguridad</label></div>
+                                        <div class="pt-2 col textoremarcado"><label><input id="difuCal" type="checkbox" value="Calidad"> Calidad</label></div>
+                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col textoremarcado"><label><input id="difuSeg" type="checkbox" value="Seguridad"> Seguridad</label></div>
                                         <div class="w-100"></div>
-                                        <div class="pt-2 col"><label><input id="difuAmb" type="checkbox" value="Ambiental"> Ambiental</label></div>
-                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col"><label><input id="difuOtro" type="checkbox" value="Otro Tema"> Otro Tema</label></div>
+                                        <div class="pt-2 col textoremarcado"><label><input id="difuAmb" type="checkbox" value="Ambiental"> Ambiental</label></div>
+                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col textoremarcado"><label><input id="difuOtro" type="checkbox" value="Otro Tema"> Otro Tema</label></div>
                                     </div>
                                 </div>
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3" >
                                     <div class="row" id="reunion">
-                                        <div style="border: 1px solid #313A3F;border-left: 0px solid #313A3F;border-top: 0px solid #313A3F;border-radius: 1px;" class="pt-2 pb-2 col text-center">Reunion de Trabajo</div>
+                                        <div style="border: 1px solid #313A3F;border-left: 0px solid #313A3F;border-top: 0px solid #313A3F;border-radius: 1px;" class="pt-2 pb-2 col text-center textoremarcado">Reunion de Trabajo</div>
                                         <div class="w-100"></div>
-                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col"><label><input id="reunRev" type="checkbox" value="Rev X la Dir"> Rev X la Dir</label></div>
+                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col textoremarcado"><label><input id="reunRev" type="checkbox" value="Rev X la Dir"> Rev X la Dir</label></div>
                                         <div class="w-100"></div>
-                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col"><label><input id="reunOtro" type="checkbox" value="Otro Tema"> Otro Tema</label></div>
+                                        <div style="border-right: 1px solid #313A3F;"class="pt-2 col textoremarcado"><label><input id="reunOtro" type="checkbox" value="Otro Tema"> Otro Tema</label></div>
                                     </div>
                                 </div>
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
                                     <div class="row" id="curso">
-                                        <div style="border-bottom: 1px solid #313A3F;border-radius: 1px;" class="pt-2 pb-2 col text-center">Curso</div>
+                                        <div style="border-bottom: 1px solid #313A3F;border-radius: 1px;" class="pt-2 pb-2 col text-center textoremarcado">Curso</div>
                                         <div class="w-100"></div>
-                                        <div class="pt-2 col"><label><input id="curInte" type="checkbox" value="Interno"> Interno</label></div>
+                                        <div class="pt-2 col textoremarcado"><label><input id="curInte" type="checkbox" value="Interno"> Interno</label></div>
                                         <div class="w-100"></div>
-                                        <div class="pt-2 col"><label><input id="curExte" type="checkbox" value="Externo"> Externo</label></div>
+                                        <div class="pt-2 col textoremarcado"><label><input id="curExte" type="checkbox" value="Externo"> Externo</label></div>
                                     </div>
                                 </div>
                             </div>
@@ -185,16 +185,16 @@ require('php/RolManager.php');
                             
                             <div class="row p-0 m-0">
                                 <div id="boton" class="pt-0 pb-1 pr-0 pl-0 col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 order-1 order-sm-1 order-md-1 order-lg-1 order-xl-1">
-                                    <button class="form-control boton" id="PDF" type="button" disabled = "diabled">Generar PDF</button>
+                                    <button class="form-control boton etiquetascampos" id="PDF" type="button" disabled = "diabled">Generar PDF</button>
                                 </div>
                                 <div id="boton" class="pt-0 pb-1 pr-0 pl-0 col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 order-2 order-sm-2 order-md-2 order-lg-2 order-xl-2">
-                                    <button class="form-control boton" id="agregar" type="button">Agregar Participante</button>
+                                    <button class="form-control boton etiquetascampos" id="agregar" type="button">Agregar Participante</button>
                                 </div> 
                                 <div id="boton" class="pt-0 pb-0 pr-0 pl-0 col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 order-1 order-sm-1 order-md-1 order-lg-3 order-xl-3">
-                                    <button class="form-control boton" id="borrar" type="button">Borrar</button>
+                                    <button class="form-control boton etiquetascampos" id="borrar" type="button">Borrar</button>
                                 </div>
                                 <div id="boton" class="pt-0 pb-1 pr-0 pl-0 col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 order-2 order-sm-2 order-md-2 order-lg-4 order-xl-4">
-                                    <button class="form-control boton" id="FVacia" type="button">Agregar Fila</button>
+                                    <button class="form-control boton etiquetascampos" id="FVacia" type="button">Agregar Fila</button>
                                 </div>
                             </div>
 
@@ -202,9 +202,9 @@ require('php/RolManager.php');
                     <!--Botones-->
 
                     <!--Lista-->
-                        <div class="p-1 col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 order-2 order-sm-2 order-md-2 order-lg-2 order-xl-2" >
-                            <div id="contescroll" class="p-1" title = "">
-                                <table class="table table-hover" style="width: 100%;">
+                        <div class="p-1 col-lg-12 order-2 order-sm-2 order-md-2 order-lg-2" >
+                            <div id="contescroll" class="p-1" title="">
+                                <table class="table table-hover etiquetascampos" style="width: 100%;">
                                     <thead>
                                         <tr class="text-center">
                                             <th scope="col" style="width: 4%;">ID</th>
@@ -219,14 +219,14 @@ require('php/RolManager.php');
                                     <tbody id="adicionados">
                                         <?php 
                                         for($i=1;$i<14;$i++){
-                                            echo '<tr class="table-primary" id="LFila">';
-                                            echo '<th style="padding: 8px; margin: 0px;" scope="row"><label class="IdAd" id="'.$i.'" style="text:center;">'.$i.'</label></th>';
-                                            echo '<th style="padding: 8px; margin: 0px;"><input type="text" class="form-control Infila" id="LRPE" maxlength="5" value=""></th>';
-                                            echo '<td style="padding: 8px; margin: 0px;"><input type="text" class="form-control Infila" id="LNombre" maxlength="50" value=""></td>';
-                                            echo '<td style="padding: 8px; margin: 0px;"><input type="text" class="form-control Infila" id="LArea" maxlength="40" value=""></td>';
-                                            echo '<td style="padding: 8px; margin: 0px;"><select class="form-control Infila" id="LFirma"><option selected="true" value="Firma">Firma</option><option value="VideoConferencia">VideoConferencia</option></select></td>';
-                                            echo '<td style="padding: 8px; margin: 0px;"><input type="text" class="form-control Infila" id="LCorreo" maxlength="33" value=""></td>';
-                                            echo '<th style="padding: 8px; margin: 0px;"><button id="Delate"><i class="fas fa-trash-alt"></i></button></th>';
+                                            echo '<tr class="table-primary etiquetascampos" id="LFila" style="padding: 10px;">';
+                                            echo '<th style="padding: 4px; margin: 0px;" scope="row"><label class="IdAd" id="'.$i.'" style="text:center;">'.$i.'</label></th>';
+                                            echo '<th style="padding: 4px; margin: 0px;"><input type="text" class="form-control Infila etiquetascampos" id="LRPE" maxlength="5" value=""></th>';
+                                            echo '<td style="padding: 4px; margin: 0px;"><input type="text" class="form-control Infila etiquetascampos" id="LNombre" maxlength="50" value=""></td>';
+                                            echo '<td style="padding: 4px; margin: 0px;"><input type="text" class="form-control Infila etiquetascampos" id="LArea" maxlength="40" value=""></td>';
+                                            echo '<td style="padding: 4px; margin: 0px;"><select class="form-control Infila etiquetascampos" id="LFirma"><option selected="true" value="Firma">Firma</option><option value="VideoConferencia">VideoConferencia</option></select></td>';
+                                            echo '<td style="padding: 4px; margin: 0px;"><input type="text" class="form-control Infila etiquetascampos" id="LCorreo" maxlength="33" value=""></td>';
+                                            echo '<th style="padding: 4px; margin: 0px;"><button id="Delate"><i class="fas fa-trash-alt"></i></button></th>';
                                             echo '</tr>';
                                         }
                                         ?>

@@ -33,7 +33,7 @@
     <usuario>
         <RPE>9MN10</RPE>
         <Nombre>Alvaro Roberto Tacuba Mora</Nombre>
-        <Area>Ingeniero Operador</Area> 
+        <Area>Supervisor de Operación</Area> 
         <Correo>alvaro.tacuba@dt.cfe.mx</Correo>
     </usuario>
 	<usuario>
@@ -63,7 +63,7 @@
     <usuario>
         <RPE>9EVCG</RPE>
         <Nombre>Victor Jair Rodríguez García</Nombre>
-        <Area>Apoyo en PyE ZOT Guerrero Morelos</Area> 
+        <Area>Supervisor de Programación y Equipos</Area> 
         <Correo>victor.rodriguez@dt.cfe.mx</Correo>
     </usuario>
     <usuario>

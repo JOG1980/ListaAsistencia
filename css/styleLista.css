@@ -37,6 +37,12 @@ body{
     height: auto;
 }
 
+.etiquetascampos{
+    font-size: 12px;
+    
+    padding-top: 20px;
+}
+
 .textocentrado {
     font-family: Arial;
     font-weight: bold;
@@ -50,17 +56,19 @@ body{
     font-weight: bold;
     color: black;
     text-align: right;
-    font-size: 16px;
+    /*font-size: 16px;*/
+    font-size: 12px;
 }
 
 .page
 {
-    width: 95%;
+    /*/width: 95%;*/
+    width: 1000px;
     background-color: #F7F7F7;
     margin: 5px auto 0px auto;
     border: 1px solid #313A3F;
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px;
 }
 
 .titulo{
@@ -87,9 +95,12 @@ body{
 .datos {
     display: block;
     width: 100%;
-    height: calc(1.75rem);
-    padding: .1rem;
-    font-size: 1rem;
+    /*height: calc(1.75rem);*/
+    height: 25px;
+    /*padding: .1rem;*/
+    padding: 0px;
+    /*font-size: 1rem;*/
+    font-size: 12px;
     font-weight: 400;
     line-height: .5;
     color: black;
@@ -144,13 +155,19 @@ body{
 
 .Infila{
     margin: 0px;
-    padding: 2px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 4px;
-    padding-right: 4px;
-    height: 100%;
+    /*padding: 2px;*/
+    /*padding-top: 0px;*/
+    /*padding-bottom: 0px;*/
+    /*padding-left: 4px;*/
+    /*padding-right: 4px;*/
+    /*height: 100%;*/
     color: black;
+    font-size: 12px;
+}
+
+
+input{
+    font-size: 12px;
 }
 
 @media screen and (max-width: 767px){
