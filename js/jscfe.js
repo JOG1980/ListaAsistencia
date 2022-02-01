@@ -700,9 +700,21 @@ function Fecha(){
     
 }
 
+//esta funcion esta hecha para pintar y validar el checkbox
+function pintarPDFCheckBox(doc,x,y,valor_ref,valor){
+	let L = 3;
+	doc.rect(x, y, L, L);
+	//si apertura esta seleccinada
+	if( valor == valor_ref){
+		doc.line(x, y  , x+L, y+L);
+		doc.line(x, y+L, x+L, y  );
+	}
+}
 //Area de los botones de la pagina
 function botones(){
     $('#bayuda').click(function(){$("#dialog").dialog("open");});
+
+    //listener del boton PDF -------------------
     $('#PDF').click(
         function(){
             //window.open("PDF.php");
@@ -716,6 +728,7 @@ function botones(){
                 list = [];
                 Fila = [];
             
+				//buscamos las opciones seleccionadas
                 $("#Checks").find('input').each(
                     function(){
                         if (this.checked) {
@@ -725,11 +738,12 @@ function botones(){
                     }
                 );
 
+				//obtenemos los renglones ------------------------------------------------
                 var obj = $("#adicionados");
                 obj.find("tr#LFila").each(
                     function() {
                         var $this = $(this);
-                        Fila.push($this.find("input#LRPE").val());
+                        //Fila.push($this.find("input#LRPE").val());
                         Fila.push($this.find("input#LNombre").val());
                         Fila.push($this.find("input#LArea").val());
                         Fila.push($this.find("#LFirma option:selected").val());
@@ -759,11 +773,17 @@ function botones(){
                 var img2 = new Image();
                     img2.src = logo_url2;
 
-                var columns = ["RPE", "Nombre", "Area", "Firma", "Correo electronico/Tel."];
-                var data = parametros["Lista"];
+                //var columns = ["RPE", "Nombre", "Area", "Firma", "Correo electronico/Tel."];
+                var columns = ["Nombre", "Area", "Firma", "Correo electronico/Tel."];
+                
+				var data = parametros["Lista"];
                 data.forEach(function (elemento, indice, array) {
-                    if( elemento[3] == "Firma" ){
-                        elemento[3] = "                             "
+                    //2022-01-26 se quito el rpe del formato por eso se recorrio el indice del arreglo
+					//if( elemento[3] == "Firma" ){
+                    //    elemento[3] = "                             "
+                    //}
+					if( elemento[2] == "Firma" ){
+                        elemento[2] = "                             "
                     }
                 });
                     //13 - 21
@@ -773,12 +793,14 @@ function botones(){
                 var Tabla = [];
                     Fila = [];
 
+                //si son menos de 13 registros (para la primera pagina, la que tiene encabezados)
                 if(ni<=13){
                     for(j=0;j<ni;j++){
                         Fila.push(data[j]);
                     }
                     Tabla.push(Fila);
                 }
+                //si son mas de 13 renglones
                 if(ni>13){
                     for(j=0;j<13;j++){
                         Fila.push(data[j]);
@@ -801,164 +823,248 @@ function botones(){
                     Fila = [];
                 }
 
+				//trazo del formato -----------------------------------------------------------------------------------
                 for(i=0;i<na+1;i++){
                     var i1 = i+1;
                         it = na+1;
+                    //altura donde se traza la tabla en todas las paginas excepto en la  primera pagina
                     top1 = 30;
                     var pagina = ""+i1+"";
                     var pagina1 = ""+it+"";
 
+					doc.setFontType("bold");
                     doc.setFontSize(14);
-                    doc.text(106,15,"Comisíon Federal de Electricidad");
-                    doc.setFontSize(12);
-                    doc.text(118,20,"Sistema Integral de Gestion");
+                    doc.text(106,13,"Comisíon Federal de Electricidad");
+                    doc.setFontSize(11);
+                    doc.text(110,19,"Política Transversal de Calidad de CFE");
+                    doc.text(111,25,"Sistema Integral de Gestion (SIG-CFE)");
 
                     doc.addImage(img1, 'png', 16, 10, 35, 15);
                     doc.addImage(img2, 'png', 226, 10, 35, 15);
 
+                    //si es la peimera pagina --------------
                     if(i1==1){
-                        top1 = 90;
-                        doc.setDrawColor(0,0,0);
-                        doc.setFontSize(14);
-                        doc.setFontType("bold");
-                        doc.rect(16, 28, 247, 7);
-                        doc.text(115,34,"LISTA DE ASISTENCIA");
-                        doc.setFillColor(0,155,110);
-                        doc.rect(16, 36, 247, 7, 'FD');
-                        doc.setFontSize(12);
                         
+                        //altura donde se traza la tabla en la primera pagina
+                        //top1 = 90;
+                        top1 = 75;
+                        doc.setDrawColor(0,0,0);
+                        //doc.setFontSize(14);
+						doc.setFontSize(12);
+                        doc.setFontType("bold");
+                        //doc.rect(16, 28, 247, 7);
+                        doc.rect(16, 29, 247, 6);
+                        //doc.text(115,33,"LISTA DE ASISTENCIA");
+                        doc.text(115,33.5,"LISTA DE ASISTENCIA");
+                        
+                        
+                        //zona de operacion ------------------------------
+                        //doc.setFillColor(0,155,110);
+                        doc.setFillColor(179,229,252);
+						doc.rect(16, 37, 247, 7, 'FD');
+						//doc.setFontSize(12);
+						doc.setFontSize(11);
                         if(title == "Zona de Operación de Transmision Guerrero Morelos"){
-                            doc.text(90,41,title);
+                            doc.text(90,42,title);
                         }
                         else{
-                            doc.text(113,41,title);
+                            doc.text(113,42,title);
                         }
                         
 
-                        doc.text(18,48,"Fecha: "+parametros["Fecha"]+" Hora: "+parametros["HC"]+" a "+parametros["HT"]+" Hrs");
-
+                        doc.text(18,49,"Fecha: "+parametros["Fecha"]+" Hora: "+parametros["HC"]+" a "+parametros["HT"]+" Hrs");
+						
+						//rectangulo contenedor ----------
                         doc.setDrawColor(0,0,0);
-                        doc.rect(16, 50, 247, 30);
-                        doc.rect(112, 50, 28, 30);
-                        doc.rect(192, 50, 42, 30);
-                        doc.rect(112, 50, 151, 8);
+                        //doc.rect(16, 50, 247, 25);
+						//doc.rect(112, 50, 28, 25);
+                        //doc.rect(192, 50, 42, 25);
+                        //doc.rect(112, 50, 151, 8);
+						doc.rect(16, 51, 247, 20);
+						doc.rect(129, 51, 24, 20);//cuadro de auditoria
+                        doc.rect(203, 51, 39, 20); //cuadro de reunion de trabajo
+                        doc.rect(129, 51, 134, 6);  //cuadro de los titulos: auditoria, difusion, reunion der trabajo, curso
 
-                        doc.text(116,56,"Auditoria");
-                        doc.text(157,56,"Difusion");
-                        doc.text(194,56,"Reunion de trabajo");
-                        doc.text(242,56,"Curso");
-                        doc.setFontType("");
-
-                        doc.rect(115, 63, 4, 4);
+                        doc.text(132,55.6,"Auditoría:");
+                        doc.text(171,55.6,"Difusión:");
+                        doc.text(204,55.6,"Reunion de trabajo:");
+                        doc.text(246,55.6,"Curso:");
+                        doc.setFontType(""); //reiniciamos el formato
+     
+						//apertura ---------------	
+                        //doc.rect(131, 61, 4, 4);
+						cb_primeralinea_y = 60;
+						cb_segundalinea_y = 66;
+                        cbtexto_primeralinea_y = 63;
+						cbtexto_segundalinea_y = 69;
+                        /*doc.rect(cb_apertura_x, cb_apertura_y, 4, 4);
+						//si apertura esta seleccinada
                         if(box[0]=="Apertura"){
-                            doc.line(115,63,119,67);
-                            doc.line(115,67,119,63);
-                        }
-                        doc.text(120,66,'Apertura');
-                        doc.rect(115, 71, 4, 4);
+                            //doc.line(131,61,135,64);
+                            //doc.line(131,64,135,61);
+							doc.line(cb_apertura_x,cb_calidad_y,cb_calidad_x+4,cb_calidad_y+4);
+                            doc.line(cb_apertura_x,cb_apertura_y+4,cb_calidad_x+4,cb_calidad_y);
+                        }*/
+						pintarPDFCheckBox(doc, 147, cb_primeralinea_y,"Apertura",box[0]);
+                        doc.text(131,cbtexto_primeralinea_y,'Apertura');
+                        
+						//cierre --------------------------
+						
+						/*doc.rect(129, 68, 4, 4);
                         if(box[1]=="Cierre"){
-                            doc.line(115,63+8,119,67+8);
-                            doc.line(115,67+8,119,63+8);
-                        }
-                        doc.text(120,74,'Cierre');
+							//doc.line(115,63+8,119,67+8);
+                            //doc.line(115,67+8,119,63+8);
+                            doc.line(129,68,133,72);
+                            doc.line(129,72,133,68);
+                        }*/
+						pintarPDFCheckBox(doc, 145, cb_segundalinea_y,"Cierre",box[1]);
+                        doc.text(133,cbtexto_segundalinea_y,'Cierre');
 
-                        doc.rect(142, 63, 4, 4);
+						//calidad -------------------
+                        //doc.rect(142, 63, 4, 4);
+						/*cb_calidad_x = 156;
+						cb_calidad_y = 61;
+                        doc.rect(cb_calidad_x, cb_calidad_y, 4, 4);
                         if(box[2]=="Calidad"){
-                            doc.line(142,63,146,67);
-                            doc.line(142,67,146,63);
-                        }
-                        doc.text(147,66,'Calidad');
-                        doc.rect(146+21, 63, 4, 4);
+                            //doc.line(142,63,146,67);
+                            //doc.line(142,67,146,63);
+							doc.line(cb_calidad_x,cb_calidad_y,cb_calidad_x+4,cb_calidad_y+4);
+                            doc.line(cb_calidad_x,cb_calidad_y+4,cb_calidad_x+4,cb_calidad_y);
+                        }*/
+						pintarPDFCheckBox(doc, 172, cb_primeralinea_y,"Calidad",box[2]);
+                        doc.text(158,cbtexto_primeralinea_y,'Calidad');
+						
+						//seguridad -------------------------
+                        /*doc.rect(146+21, 63, 4, 4);
                         if(box[3]=="Seguridad"){
                             doc.line(167,63,171,67);
                             doc.line(167,67,171,63);
-                        }
-                        doc.text(151+21,66,'Seguridad');
-                        doc.rect(142, 71, 4, 4);
+                        }*/
+						pintarPDFCheckBox(doc, 196, cb_primeralinea_y,"Seguridad",box[3]);
+                        doc.text(179,cbtexto_primeralinea_y,'Seguridad');
+						
+						//ambiental----------
+                        /*doc.rect(142, 71, 4, 4);
                         if(box[4]=="Ambiental"){
                             doc.line(142,63+8,146,67+8);
                             doc.line(142,67+8,146,63+8);
-                        }
-                        doc.text(147,74,'Ambiental');
-                        doc.rect(146+21, 71, 4, 4);
+                        }*/
+						pintarPDFCheckBox(doc, 173, cb_segundalinea_y,"Ambiental",box[4]);
+                        doc.text(155,cbtexto_segundalinea_y,'Ambiental');
+                        
+						//otro tema
+						/*doc.rect(146+21, 71, 4, 4);
                         if(box[5]=="Otro Tema"){
                             doc.line(167,63+8,171,67+8);
                             doc.line(167,67+8,171,63+8);
-                        }
-                        doc.text(151+21,74,'Otro Tema');
+                        }*/
+						pintarPDFCheckBox(doc, 197, cb_segundalinea_y,"Otro Tema",box[5]);
+                        doc.text(179,cbtexto_segundalinea_y,'Otro Tema');
 
-                        doc.rect(194, 63, 4, 4);
+						
+						
+						
+						//revisado por la direccion -------------------------
+                        /*doc.rect(194, 63, 4, 4);
                         if(box[6]=="Rev X la Dir"){
                             doc.line(194,63,198,67);
                             doc.line(194,67,198,63);
-                        }
-                        doc.text(199,66,'Revision por la Dir.');
-                        doc.rect(194, 71, 4, 4);
+                        }*/
+						pintarPDFCheckBox(doc, 237, cb_primeralinea_y,"Rev X la Dir",box[6]);
+                        doc.text(205,cbtexto_primeralinea_y,'Revision por la Dir.');
+						
+						//otro tema --------------------------------
+                        /*doc.rect(194, 71, 4, 4);
                         if(box[7]=="Otro Tema"){
                             doc.line(194,63+8,198,67+8);
                             doc.line(194,67+8,198,63+8);
-                        }
-                        doc.text(199,74,'Otro Tema');
+                        }*/
+						pintarPDFCheckBox(doc, 229, cb_segundalinea_y,"Otro Tema",box[7]);
+                        doc.text(210,cbtexto_segundalinea_y,'Otro Tema');
 
-                        doc.rect(236, 63, 4, 4);
+						//interno ------------------------------
+                        /*doc.rect(236, 63, 4, 4);
                         if(box[8]=="Interno"){
                             doc.line(236,63,240,67);
                             doc.line(236,67,240,63);
-                        }
-                        doc.text(241,66,'Interno');
-                        doc.rect(236, 71, 4, 4);
+                        }*/
+						pintarPDFCheckBox(doc, 257, cb_primeralinea_y,"Interno",box[8]);
+                        doc.text(244,cbtexto_primeralinea_y,'Interno');
+                        
+						//externo -----------------------------------
+						/*doc.rect(236, 71, 4, 4);
                         if(box[9]=="Externo"){
                             doc.line(236,63+8,240,67+8);
                             doc.line(236,67+8,240,63+8);
-                        }
-                        doc.text(241,74,'Externo');
+                        }*/
+						pintarPDFCheckBox(doc, 258, cb_segundalinea_y,"Externo",box[9]);
+                        doc.text(244,cbtexto_segundalinea_y,'Externo');
 
-                        doc.setFontSize(10);
+						//titulo y expositor -------------------------------------
+                        doc.setFontSize(11);
                         if(parametros["tema"].length>30){
                             doc.text(17,62,"Tema: "+parametros["tema"]);
+                            doc.text(17,68,"Expositor: "+parametros["expositor"]);
                         }
-                        doc.text(17,62,"Tema: "+parametros["tema"]);
-                        doc.text(17,68,"Expositor: "+parametros["expositor"]);
+                        else{
+                            doc.text(17,60,"Tema: "+parametros["tema"]);
+                            //doc.text(19,65,"Tema: "+parametros["tema"]);
+                            doc.text(17,70,"Expositor: "+parametros["expositor"]);
+                        }
+                        //doc.line(16,85,263,85);
+                    }// fin de si es la primera pagina
 
-                        doc.line(16,85,263,85);
-                    }
-
+					//pie de pagina -----------------------------------------------------------
                     doc.line(16,204,263,204);
-                    doc.setFontSize(10);
-                    doc.text(132,208,"Pagina "+pagina+" de "+ pagina1 +"");
-                    doc.text(228,208,"P-1020-003-R-04 Ver. 04");
+                    doc.setFontSize(9);
+                    doc.text(17,208,"Ver. 05");
+                    doc.text(132,208,"Página "+pagina+" de "+ pagina1 +"");
+                    doc.text(239,208,"P-1020-003-R-04");
 
+					//creacion de la tabla -----------------------------
                     doc.autoTable(
                         columns,
                         Tabla[i],
-                    { 
-                        tableLineColor: [255, 255, 255],
-                        styles: {
-                            font: 'Meta',
-                            lineColor: [0, 0, 0],
-                            lineWidth: 0.10
+                        { 
+                            tableLineColor: [255, 255, 255],
+                            styles: {
+                                //font: 'Meta',
+                                fontSize: 10,
+                                lineColor: [0, 0, 0],
+                                lineWidth: 0.10,
+                                cellPadding: 2.4
+                            },
+                            margin:{ top: top1, left: 16, right:16},
+                            headerStyles: {
+                                //fillColor: [0,155,110],
+                                fillColor: [255,255,140],
+                                font: "bold",
+                                fontSize: 12,
+                                textColor: 50,
+                                halign: 'center',
+                                valign: 'middle'
+                            },
+                            columnStyles: {
+                                //cambio 2022-01-26
+                                //0: {halign: 'center',
+                                //    valign: 'middle',
+                                //    columnWidth: 25},
+                                //1: {columnWidth: 60},
+                                //2: {columnWidth: 60},
+                                //3: {halign: 'center',
+                                //    valign: 'middle',
+                                //   columnWidth: 30},
+                                //4: {columnWidth: 40}
+                                0: {halign: 'center',
+                                    valign: 'middle',
+                                    columnWidth: 70},
+                                1: {columnWidth: 60},
+                                2: {halign: 'center',
+                                    valign: 'middle',
+                                    columnWidth: 30},
+                                3: {columnWidth: 55}
+                            }
                         },
-                        margin:{ top: top1, left: 16, right:16},
-                        headerStyles: {
-                            fillColor: [0,155,110],
-                            font: "bold",
-                            fontSize: 12,
-                            textColor: 50,
-                            halign: 'center',
-                            valign: 'middle'
-                        },
-                        columnStyles: {
-                            0: {halign: 'center',
-                                valign: 'middle',
-                                columnWidth: 25},
-                            1: {columnWidth: 60},
-                            2: {columnWidth: 60},
-                            3: {halign: 'center',
-                                valign: 'middle',
-                                columnWidth: 30},
-                            4: {columnWidth: 40}
-                        }
-                    },
                     );
 
                     if(i<na){
