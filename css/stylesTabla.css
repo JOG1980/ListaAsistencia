@@ -1,0 +1,9 @@
+.table_objetivos{
+    border: 1px solid #777777; 
+    padding: 3px 5px 3px 10px;
+}
+
+table.table_objetivos td, table.table_objetivos.th{
+    border: 1px solid #777777; 
+    padding: 3px 5px 3px 10px;
+    }

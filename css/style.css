@@ -1,0 +1,321 @@
+body{
+	overflow-x:hidden;
+    overflow-y:scroll;
+}
+/*Left Nav*/
+ul.left_nav {
+	text-align: left;
+	font: 100/1.4 Verdana, Arial, Helvetica !important;
+	font-size:13px;
+	list-style:none;
+	/* list-style-image: url(../img/flecha.svg); */
+	font-stretch: normal;
+	padding-left: 12px;
+	vertical-align: middle;
+	line-height:150%
+}
+
+ul.left_nav  li{
+	padding-bottom: 3px
+}
+
+ul.left_nav a, ul.left_nav a:visited { 
+	color: #666666;
+	text-decoration: none
+}
+
+ul.left_nav a:hover, ul.left_nav a:active, ul.left_nav a:focus {
+	color: #023d2b;
+}
+
+ul.left_nav2 {
+	list-style:none;
+	/* list-style-image: url(../img/flecha.svg); */
+	text-align: left;
+	font-size:13px;
+	padding-left: 13px;
+	vertical-align: middle;
+	line-height:150%
+}
+
+ul.left_nav3 {
+	list-style:none;
+	/* list-style-image: url(../img/flecha.svg); */
+	text-align: left;
+	font-size:13px;
+	padding-left: 14px;
+	vertical-align: middle;
+	line-height:150%
+}
+
+/*footer*/
+.footer {
+	padding: 10px 10px 10px 10px;
+	background: #006e4c;
+	color: #FFF;
+	font-size:12px;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 0px 0px 20px 20px;
+}
+
+/*Header*/
+.header_titulo1{
+	font-family: 'cenace_wf', Arial, sans-serif; 
+	font-size:30px;
+	font-weight: bold;
+	color:#404040;
+	text-align:center;
+	position:inherit;
+	text-shadow: 0.1em 0.1em 0.2em #777777;
+}
+
+.header_titulo2{
+	font-family: 'cenace_wf', Arial, sans-serif; 
+	font-size:26px;
+	font-weight: bold;
+	color:#009b6e;
+	text-align:center;
+	position:inherit;
+	text-shadow: 0.1em 0.1em 0.2em #777777;
+}
+
+#header_menu {
+	width: 100%;
+	height: 100%;
+}
+
+/* Navbar  */
+.sesion:hover{
+	color: black !important;
+	background-color: transparent !important;
+	border-color: black !important;
+}
+
+ul.header_nav {
+	list-style: none; 
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size:15px;
+	vertical-align: center;	
+}
+
+ul.header_nav a, ul.header_nav a:visited { 	
+	display: block;
+	min-width: 100px; /*tamaño de cada opcion del menu*/
+	max-width: 240px; /*tamaño de cada opcion del menu*/
+	text-decoration: none;
+}
+
+ul.header_nav a:hover, ul.header_nav a:active, ul.header_nav a:focus { 
+	background: #009b6e;
+	color: #FFF;
+}
+
+/*Organigrama*/
+#tree{
+	position: relative;
+  }
+  
+/*div que contiene al organigrama*/
+.cont{
+	max-width: auto; /*No modificar*/
+	height:600px; 
+	margin:0 auto; /*Importante NO quitar*/
+	position:relative /*Importante NO quitar*/
+}
+
+/* Tabla objetivos e indicadores   */
+.table_objetivos{
+    border: 1px solid #777777; 
+    padding: 3px 5px 3px 10px;
+}
+
+table.table_objetivos td, table.table_objetivos.th{
+    border: 1px solid #777777; 
+    padding: 3px 5px 3px 10px;
+    }
+
+/*Contador Dias*/
+.Contador{
+	border: 1px solid #003f2b;
+	background-color: #005a3e;
+	margin: 5px;
+	font-size: 13px;
+	padding: 4px;
+	font-weight: 900;
+	color: #FFFFFF;
+	border-radius: 10px;
+	line-height: 40% ;
+}
+
+/*Contenido Principal*/
+.ContenidoPrincipal{
+	font-family: 'Roboto', sans-serif;
+}
+
+/*Footer*/
+#myFooter {
+    background-color: #005a3e; 
+    color: white;
+}
+
+#myFooter .row {
+    margin-bottom: 0px;
+}
+
+#myFooter .info{
+    text-align: justify; 
+    color: #afb0b1;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+
+#myFooter .second-bar .logo {
+	height: 50px;
+    float: left;
+	line-height: 68px;
+    margin: 0;
+    padding: 0;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+#myFooter .second-bar {
+    text-align: center;
+	background-color: #00724e;
+}
+
+#myFooter .second-bar a {
+    font-size: 22px;
+    color: white;
+    padding: 10px;
+    transition: 0.2s;
+    line-height: 68px;
+}
+
+#myFooter .second-bar a:hover {
+    text-decoration: none;
+}
+
+#myFooter .derechos {
+    float:right;
+}
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+    #myFooter .info{
+		display: flex !important;
+		justify-content: center !important;	  
+	}
+	#myFooter .EnlacesCentrar{
+		text-align: center;
+		padding-left: 0px !important; 
+	}
+	#myFooter .contacto{
+		display:inline !important;
+		justify-content:initial !important;	 
+	}
+	#myFooter .second-bar .logo {
+		text-align: center;
+		padding: 4px;
+	}
+	#myFooter .derechos{
+		text-align: center;
+		padding: 2px;
+	}
+}
+
+#myFooter .carousel-item{
+	
+	width: 100%;
+	height: 205px;
+}
+#myFooter .carousel-item img {
+	height: 100%;
+	width: 100%;
+}
+
+/*Color para las tablas y cards*/
+.cardsColor{
+	background-color: #005a3e;
+}
+
+/*Contenedor para los PDF precargados en las paginas*/
+.contenedorPDF{
+    width: 100%;
+    height: 500px;
+    display: flex !important; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Pagina Recuerdos Galeria */
+.btn:focus,
+.btn:active,
+button:focus,
+button:active {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+#image-gallery .modal-footer {
+	display: block;
+}
+
+.thumb {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.galeria{
+	display: flex !important; 
+    flex-wrap: wrap!important; 
+    justify-content: center!important; 
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    z-index: 3!important; 
+    color: white !important; 
+    background-color: #005a3e !important; 
+    border-color: gray !important; 
+}
+.pagination > li > a{
+	color:black !important;       
+}
+.pagination > .active > a
+{
+    color: white !important; 
+    background-color: #005a3e!important; ;
+    border-color: gray!important; ;
+}
+.pagination > .active > a:hover
+{
+    background-color: #005a3e!important; ;
+    border-color:  gray!important; ;
+}

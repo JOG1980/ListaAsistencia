@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZOTGM>
+    <usuario>
+        <RPE>9DY88</RPE>
+        <Nombre>Eduardo Otilio Viveros Capote</Nombre>
+        <Area>Superintendente ZOT Gro Mor</Area> 
+        <Correo>eduardo.viveros@dt.cfe.mx</Correo>
+    </usuario>
+    <usuario>
+        <RPE>9DYB8</RPE>
+        <Nombre>Melissa Ríos Juárez</Nombre>
+        <Area>Auxiliar Administrativo</Area> 
+        <Correo>melissa.rios@dt.cfe.mx</Correo>
+    </usuario>
+    <usuario>
+        <RPE>9DY87</RPE>
+        <Nombre>Carolina Castillo Salado</Nombre>
+        <Area>Auxiliar Especializado</Area> 
+        <Correo>carolina.castillo@cfe.gob.mx</Correo>
+    </usuario>
+    <usuario>
+        <RPE>9DY8L</RPE>
+        <Nombre>Andrés Morales León</Nombre>
+        <Area>Profesionista de Analisis</Area> 
+        <Correo>andres.morales@dt.cfe.mx</Correo>
+    </usuario>
+    <usuario>
+        <RPE>9DY8J</RPE>
+        <Nombre>Jaime Arturo Cortes Vergara</Nombre>
+        <Area>Ingeniero Operador</Area> 
+        <Correo>jaime.cortez@dt.cfe.mx</Correo>
+    </usuario>
+    <usuario>
+        <RPE>9MN10</RPE>
+        <Nombre>Alvaro Roberto Tacuba Mora</Nombre>
+        <Area>Ingeniero Operador</Area> 
+        <Correo>alvaro.tacuba@dt.cfe.mx</Correo>
+    </usuario>
+	<usuario>
+        <RPE>D183L</RPE>
+        <Nombre>Juan Carlos Damian Torres</Nombre>
+        <Area>Personal en Capacitación</Area> 
+        <Correo>jundul_11@hotmail.com</Correo>
+    </usuario>
+    <usuario>
+        <RPE>D424L</RPE>
+        <Nombre>José Ivan Catalán López</Nombre>
+        <Area>Personal en Capacitación</Area> 
+        <Correo>ing.ivan.catalan.89@gmail.com</Correo>
+    </usuario>
+	<usuario>
+        <RPE>9ARMG</RPE>
+        <Nombre>José Geraldo Dimas Calixto</Nombre>
+        <Area>Personal en Capacitación</Area> 
+        <Correo>jose.dimas@dt.cfe.mx</Correo>
+    </usuario>
+    <usuario>
+        <RPE>9ARKE</RPE>
+        <Nombre>Jesús Salvador Plancarte Medina</Nombre>
+        <Area>Personal en Capacitación</Area> 
+        <Correo>salvador.plancarte@dt.cfe.mx</Correo>
+    </usuario>
+    <usuario>
+        <RPE>9EVCG</RPE>
+        <Nombre>Victor Jair Rodríguez García</Nombre>
+        <Area>Apoyo en PyE ZOT Guerrero Morelos</Area> 
+        <Correo>victor.rodriguez@dt.cfe.mx</Correo>
+    </usuario>
+    <usuario>
+        <RPE>9DYAP</RPE>
+        <Nombre>Jorge Ortiz García</Nombre>
+        <Area>Profesionista de Programacion</Area> 
+        <Correo>jorge.ortizga@dt.cfe.mx</Correo>
+    </usuario>
+    <usuario>
+        <RPE>9DYBA</RPE>
+        <Nombre>Oscar Francisco Herrera Lorenzo</Nombre>
+        <Area>Profesionista de Aplicaciones</Area> 
+        <Correo>oscar.herrera03@cfe.gob.mx</Correo>
+    </usuario>
+    <usuario>
+        <RPE>9DYA0</RPE>
+        <Nombre>Salvador Navarrete Hernández</Nombre>
+        <Area>Auxiliar de Mantenimiento</Area> 
+        <Correo>salvador.navarrete@cfe.gob.mx</Correo>
+    </usuario>
+	<usuario>
+        <RPE>9DYB9</RPE>
+        <Nombre>José Natividad Silva Genchi</Nombre>
+        <Area>Ayudante Técnico</Area> 
+        <Correo>jose.silvag@dt.cfe.mx</Correo>
+    </usuario>
+	<usuario>
+        <RPE>9MN30</RPE>
+        <Nombre>Jessica Rodríguez Zavaleta</Nombre>
+        <Area>Auxiliar de Servicios Chofer</Area> 
+        <Correo>jessica.rodriguez@cfe.gob.mx</Correo>
+    </usuario>
+</ZOTGM>
